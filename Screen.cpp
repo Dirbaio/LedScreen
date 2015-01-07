@@ -126,6 +126,23 @@ int Screen::getPixel(int x, int y) {
 	return screen[x][y];
 }
 
+void Screen::drawRect(int p, int x, int y, int w, int h) {
+	for(int xx = 0; xx < w; xx++) {
+		setPixel(p, x+xx, y);
+		setPixel(p, x+xx, y+h-1);
+	}
+	for(int yy = 0; yy < h; yy++) {
+		setPixel(p, x, y+yy);
+		setPixel(p, x+w-1, y+yy);
+	}
+}
+
+void Screen::fillRect(int p, int x, int y, int w, int h) {
+	for(int xx = 0; xx < w; xx++)
+		for(int yy = 0; yy < h; yy++)
+			setPixel(p, x+xx, y+yy);
+}
+
 void Screen::drawLine(int p, int x, int y, int x2, int y2) {
 
 }
@@ -143,14 +160,6 @@ void Screen::drawOval(int p, int x, int y, int rx, int ry) {
 }
 
 void Screen::fillOval(int p, int x, int y, int rx, int ry) {
-
-}
-
-void Screen::drawRect(int p, int x, int y, int w, int h) {
-
-}
-
-void Screen::fillRect(int p, int x, int y, int w, int h) {
 
 }
 

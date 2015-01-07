@@ -4,6 +4,9 @@
 
 using namespace std;
 
+const int w = Screen::width;
+const int h = Screen::height;
+
 int main()
 {
 	Screen s;
@@ -13,9 +16,8 @@ int main()
 	while(true) {
 		t++;
 
-		for(int x = 0; x < Screen::width; x++)
-			for(int y = 0; y < Screen::height; y++)
-				s.setPixel((x+y+t/4) % 10 >= 5, x, y);
+		s.fillRect(1, 0, 0, w, h);
+		s.drawLine(t%2, 0, 0, w, h);
 
 		s.swapBuffers();
 		p.update();

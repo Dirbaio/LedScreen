@@ -14,13 +14,13 @@ class Screen
 		void setPixel(int p, int x, int y);
 		int getPixel(int x, int y);
 
+		void drawRect(int p, int x, int y, int w, int h);
+		void fillRect(int p, int x, int y, int w, int h);
 		void drawLine(int p, int x, int y, int x2, int y2);
 		void drawCircle(int p, int x, int y, int r);
 		void fillCircle(int p, int x, int y, int r);
 		void drawOval(int p, int x, int y, int rx, int ry);
 		void fillOval(int p, int x, int y, int rx, int ry);
-		void drawRect(int p, int x, int y, int w, int h);
-		void fillRect(int p, int x, int y, int w, int h);
 
 	private:
 		int fd;
